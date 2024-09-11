@@ -1,0 +1,24 @@
+{
+    "name": "Key Fields Inspector",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "permissions": ["tabs", "activeTab", "cookies"],
+    "host_permissions": [
+        "https://*.salesforce.com/"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.lightning.force.com/*"
+            ],
+            "js": ["contentScript.js"],
+            "css": ["contentStyles.css"]
+        }
+    ],
+    "icons": {
+        "128": "logo.png"
+    }
+}
